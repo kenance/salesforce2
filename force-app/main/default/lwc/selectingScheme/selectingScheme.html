@@ -1,0 +1,95 @@
+    <template>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_4-of-12 slds-p-around_x-small" >
+                    <lightning-combobox
+                            name="CustomerType"
+                            label="Customer Type"
+                            placeholder="--None--"
+                            options={customerOptions}
+                            onchange={cusTypeChange} 
+                            required
+                            class="forFetchSchemeButton"></lightning-combobox>     
+            </div>
+            <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                            <lightning-combobox
+                            name="DepositType"
+                            label="Deposit Type"
+                            placeholder="--None--"
+                            options={depTypeOptions}
+                            onchange={depTypeChange} 
+                            required
+                            class="forFetchSchemeButton"></lightning-combobox> 
+            </div>
+            <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                            <lightning-combobox
+                            name="PayoutFrequency"
+                            label="Payout Frequency"
+                            placeholder="--None--"
+                            options={payFreqOptions}
+                            onchange={payFreqChange} 
+                            required
+                            class="forFetchSchemeButton"></lightning-combobox> 
+            
+            </div>
+            <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                            <lightning-combobox
+                            name="TenorInMonths"
+                            label="Tenor In Months"
+                            placeholder="--None--"
+                            options={tenorMonthsOptions}
+                            onchange={tenorMonthChange} 
+                            required
+                            class="forFetchSchemeButton"></lightning-combobox> 
+
+            </div>
+            <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                            <lightning-combobox
+                            name="TenorInDays"
+                            label="Tenor In Days"
+                            placeholder="--None--"
+                            options={tenorDaysOptions}
+                            onchange={tenorDayChange} 
+                            required
+                            class="forFetchSchemeButton"></lightning-combobox> 
+
+            </div>
+            <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                            <lightning-input
+                            type="number"
+                            label="FD Amount"
+                            placeholder="Enter the Amount Pls"
+                            onchange={fDAmountChange}
+                            required
+                            class="forFetchSchemeButton"
+                            ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_12-of-12 slds-p-around_x-small slds-align_absolute-center">
+                <lightning-button variant="brand" label="Fetch Scheme" title="Fetch Scheme" onclick={fetchScheme}></lightning-button>
+            </div>
+            <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                <lightning-combobox
+                name="InterestSchemeObj"
+                label="Interest Scheme Record"
+                placeholder="--None--"
+                options={intSchemeRecs}
+                onchange={schemeChange} 
+                required
+                class="forSaveButton"></lightning-combobox> 
+
+                </div>
+                <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                </div> 
+                <div class="slds-col slds-size_4-of-12 slds-p-around_x-small">
+                    <lightning-input
+                    type="number"
+                    label="Interest Rate"
+                    required
+                    disabled
+                    value={selectedIntRate}
+                    ></lightning-input>
+                </div>
+                <div class="slds-col slds-size_12-of-12 slds-p-around_x-small slds-align_absolute-center">
+                    <lightning-button variant="brand" label="Save" title="Save" onclick={save}></lightning-button>
+                </div>     
+            </div>
+    </template>
